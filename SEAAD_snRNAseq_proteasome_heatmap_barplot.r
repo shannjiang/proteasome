@@ -96,7 +96,7 @@ celltypes = unique(broadClasses)
 
 celltype = 'Microglia'
 brainRegion = 'DLPFC'
-for (brainRegion in brainRegions)(
+for (brainRegion in brainRegions){
 for (celltype in celltypes){
 targetCelltype_df = celltype_df[celltype_df$broadClass %in% celltype,]
 log10_by_braak_list = lapply(targetCelltype_df$subClass, function(x){log10_by_braak_df_gen(x,brainRegion)})
